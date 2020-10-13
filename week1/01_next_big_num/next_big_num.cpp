@@ -6,9 +6,30 @@
 
 using namespace std;
 
+int getBin(int n) {
+    int sum = 0;
+    int temp = n;
+    
+    while(temp) {
+        sum += temp % 2;
+        temp /= 2;
+    }
+    
+    return sum;
+}
+
 int solution(int n) {
-	int answer = 0;
-	return answer;
+    int answer = n;
+    
+    int binary_count = getBin(n);
+    
+    while(true) {
+        answer++;
+        if(getBin(answer) == binary_count)
+            break;
+    }
+    
+    return answer;
 }
 
 int main()
