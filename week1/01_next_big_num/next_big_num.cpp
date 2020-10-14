@@ -8,28 +8,24 @@ using namespace std;
 
 int getBin(int n) {
     int sum = 0;
-    int temp = n;
     
-    while(temp) {
-        sum += temp % 2;
-        temp /= 2;
+    while(n) {
+        sum += (n & 1);
+        n >>= 1;
     }
     
     return sum;
 }
 
 int solution(int n) {
-    int answer = n;
     
     int binary_count = getBin(n);
+    n++;
     
-    while(true) {
-        answer++;
-        if(getBin(answer) == binary_count)
-            break;
-    }
+    while(getBin(n) != binary_count)
+        n++;
     
-    return answer;
+    return n;
 }
 
 int main()
