@@ -21,7 +21,7 @@ void print_vector(vector<T> v)
 
 int main()
 {
-	auto ans = solution2({1, 2, 3, 2, 3});
+	auto ans = solution({1, 2, 3, 2, 3});
 
 	print_vector<int>(ans); // 4, 3, 1, 1, 0
 }
