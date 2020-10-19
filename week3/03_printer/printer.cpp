@@ -13,6 +13,6 @@ int solution(vector<int> priorities, int location) {
 
 int main()
 {
-	cout << solution2({2, 1, 3, 2}, 2) << endl; // 1
-	cout << solution2({1, 1, 9, 1, 1, 1}, 0) << endl; // 5
+	cout << solution({2, 1, 3, 2}, 2) << endl; // 1
+	cout << solution({1, 1, 9, 1, 1, 1}, 0) << endl; // 5
 }
