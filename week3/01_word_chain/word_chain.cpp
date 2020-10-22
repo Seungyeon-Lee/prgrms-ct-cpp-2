@@ -1,4 +1,4 @@
-// ¿µ¾î ³¡¸»ÀÕ±â
+// ì˜ì–´ ëë§ì‡ê¸°
 
 #include <string>
 #include <vector>
@@ -9,7 +9,7 @@ using namespace std;
 vector<int> solution(int n, vector<string> words) {
 	vector<int> answer;
 
-	// [½ÇÇà] ¹öÆ°À» ´©¸£¸é Ãâ·Â °ªÀ» º¼ ¼ö ÀÖ½À´Ï´Ù. 
+	// [ì‹¤í–‰] ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì¶œë ¥ ê°’ì„ ë³¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤. 
 	cout << "Hello Cpp" << endl;
 
 	return answer;

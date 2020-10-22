@@ -1,4 +1,5 @@
 // 가사 검색
+// https://tech.kakao.com/2019/10/02/kakao-blind-recruitment-2020-round1/
 
 #include <string>
 #include <vector>
