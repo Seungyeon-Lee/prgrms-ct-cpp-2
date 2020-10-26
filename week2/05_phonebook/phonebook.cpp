@@ -2,12 +2,23 @@
 
 #include <string>
 #include <vector>
+#include <string.h>
 #include <iostream>
 
 using namespace std;
 
 bool solution(vector<string> phone_book) {
 	bool answer = true;
+
+	for (int i = 0; i < phone_book.size(); i++)
+		for (int j = i + 1; j < phone_book.size(); j++)
+		{
+			int size = (phone_book[j].size() > phone_book[i].size()) ? phone_book[i].size() : phone_book[j].size();
+
+			if (!strncmp(phone_book[j].c_str(), phone_book[i].c_str(), size))
+				return false;
+		}
+
 	return answer;
 }
 
