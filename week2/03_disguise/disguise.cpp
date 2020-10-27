@@ -2,28 +2,20 @@
 
 #include <string>
 #include <vector>
-#include <set>
+#include <unordered_map>
 #include <iostream>
 
 using namespace std;
 
 int solution(vector<vector<string>> clothes) {
 	int answer = 1;
-	set <string> types;
+	unordered_map <string, int> types;
 
-	for (int i = 0; i < clothes.size(); i++)
-		types.insert(clothes[i][1]);
+	for (auto& clothe : clothes)
+		types[clothe[1]]++;
 
-	int sum = 0;
-	for (string type : types)
-	{
-		for (int k = 0; k < clothes.size(); k++)
-			if (clothes[k][1] == type)
-				sum++;
-
-		answer *= (sum + 1);
-		sum = 0;
-	}
+	for (auto& type : types)
+		answer *= (type.second + 1);
 
 	answer--;
 
