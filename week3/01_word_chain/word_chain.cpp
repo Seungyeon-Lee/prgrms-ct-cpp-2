@@ -2,15 +2,33 @@
 
 #include <string>
 #include <vector>
+#include <unordered_map>
 #include <iostream>
 
 using namespace std;
 
 vector<int> solution(int n, vector<string> words) {
 	vector<int> answer;
+	answer.resize(2);
+	unordered_map <string, bool> m;
 
-	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다. 
-	cout << "Hello Cpp" << endl;
+	char cur = words[0][words[0].size() - 1];
+	m[words[0]] = true;
+	for (int i = 1; i < words.size(); i++)
+	{
+		if (cur == words[i][0] && !m[words[i]])
+		{
+			m[words[i]] = true;
+			cur = words[i][words[i].size() - 1];
+		}
+		else {
+			answer[0] = i % n + 1;
+			answer[1] = i / n + 1;
+			return answer;
+		}
+	}
+
+	answer[0] = answer[1] = 0;
 
 	return answer;
 }
