@@ -16,6 +16,6 @@ int main()
 	vector<string> words1 = {"hot", "dot", "dog", "lot", "log", "cog"};
 	vector<string> words2 = {"hot", "dot", "dog", "lot", "log"};
 
-	cout << solution2("hit", "cog", words1) << endl; // 4
-	cout << solution2("hit", "cog", words2) << endl; // 0
+	cout << solution("hit", "cog", words1) << endl; // 4
+	cout << solution("hit", "cog", words2) << endl; // 0
 }

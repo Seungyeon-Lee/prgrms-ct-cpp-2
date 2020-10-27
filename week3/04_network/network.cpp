@@ -13,6 +13,6 @@ int solution(int n, vector<vector<int>> computers) {
 
 int main()
 {
-	cout << solution2(3, {{1, 1, 0}, {1, 1, 0}, {0, 0, 1}}) << endl; // 2
-	cout << solution2(3, {{1, 1, 0}, {1, 1, 1}, {0, 1, 1}}) << endl; // 1
+	cout << solution(3, {{1, 1, 0}, {1, 1, 0}, {0, 0, 1}}) << endl; // 2
+	cout << solution(3, {{1, 1, 0}, {1, 1, 1}, {0, 1, 1}}) << endl; // 1
 }
