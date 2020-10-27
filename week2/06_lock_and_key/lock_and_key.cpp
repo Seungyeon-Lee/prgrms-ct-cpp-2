@@ -10,14 +10,12 @@ void rotateKey(vector<vector<int>>& key) {
 
 	vector<vector<int>> temp(key);
 
-	for (int i = 0; i < key.size(); i++)
-		for (int j = 0; j < key.size(); j++)
-			temp[i][j] = key[j][key.size() - i - 1];
-
-	key = temp;
+	for (int i = 0; i < temp.size(); i++)
+		for (int j = 0; j < temp.size(); j++)
+			key[i][j] = temp[j][key.size() - i - 1];
 }
 
-bool checkKey(int r, int c, int n, vector<vector<int>> key, vector<vector<int>> map) {
+bool checkKey(int r, int c, int n, vector<vector<int>>& key, vector<vector<int>> map) {
 
 	for (int i = r; i < r + key.size(); i++)
 		for (int j = c; j < c + key.size(); j++)
