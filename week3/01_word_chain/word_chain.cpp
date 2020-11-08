@@ -2,24 +2,23 @@
 
 #include <string>
 #include <vector>
-#include <unordered_map>
+#include <unordered_set>
 #include <iostream>
 
 using namespace std;
 
 vector<int> solution(int n, vector<string> words) {
-	vector<int> answer;
-	answer.resize(2);
-	unordered_map <string, bool> m;
+	vector<int> answer(2, 0);
+	unordered_set <string> m;
 
-	char cur = words[0][words[0].size() - 1];
-	m[words[0]] = true;
+	char cur = words[0].back();
+	m.insert(words[0]);
 	for (int i = 1; i < words.size(); i++)
 	{
-		if (cur == words[i][0] && !m[words[i]])
+		if (cur == words[i][0] && m.find(words[i]) == m.end())
 		{
-			m[words[i]] = true;
-			cur = words[i][words[i].size() - 1];
+			m.insert(words[i]);
+			cur = words[i].back();
 		}
 		else {
 			answer[0] = i % n + 1;
@@ -27,8 +26,6 @@ vector<int> solution(int n, vector<string> words) {
 			return answer;
 		}
 	}
-
-	answer[0] = answer[1] = 0;
 
 	return answer;
 }
